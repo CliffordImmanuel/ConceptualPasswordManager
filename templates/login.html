@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Password Manager</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Password Manager</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <h2>Login</h2>
+            <form method="POST" action="{{ url_for('login') }}">
+                <label>Username:</label>
+                <input type="text" name="username" required><br>
+                <label>Password:</label>
+                <input type="password" name="password" required><br>
+                <input type="submit" value="Login">
+            </form>
+        </section>
+    </div>
+</body>
+</html>

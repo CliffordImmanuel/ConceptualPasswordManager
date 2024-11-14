@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Password - Password Manager</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Password Manager</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <h2>Edit Password</h2>
+            <form method="POST" action="{{ url_for('edit', password_id=password['id']) }}">
+                <label>Service:</label>
+                <input type="text" name="service" value="{{ password['service'] }}" required><br>
+                <label>Username:</label>
+                <input type="text" name="username" value="{{ password['username'] }}" required><br>
+                <label>Password:</label>
+                <input type="password" name="password" value="{{ password['password'] }}" required><br>
+                <input type="submit" value="Update Password">
+            </form>
+        </section>
+    </div>
+</body>
+</html>

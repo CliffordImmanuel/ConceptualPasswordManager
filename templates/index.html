@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Manager</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Password Manager</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h2>Secure Password Management</h2>
+            <p>Store and manage your passwords safely with our password manager.</p>
+            <a class="button" href="{{ url_for('register') }}">Get Started</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Your Password Manager</p>
+        </footer>
+    </div>
+</body>
+</html>

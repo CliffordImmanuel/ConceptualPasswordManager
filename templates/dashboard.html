@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Password Manager</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Password Manager</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('add') }}">Add Password</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <h2>My Passwords</h2>
+            <ul>
+                {% for password in passwords %}
+                <li>
+                    <strong>Service:</strong> {{ password[2] }}<br>
+                    <strong>Username:</strong> {{ password[3] }}<br>
+                    <strong>Password:</strong> {{ password[4] }}<br>
+                    <a href="{{ url_for('edit', password_id=password[0]) }}">Edit</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
